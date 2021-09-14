@@ -1,0 +1,31 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>laptopshow</title>
+    {% endblock %}
+
+
+    {% block first %}
+
+    <div class='container' style="width:60%;">
+        <h2 style="text-align: center;"> LaptopAdd</h2>
+
+        <form method='post' class='jumbotron'>
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <br>
+
+            <button type='submit' class='btn btn-success'>Submit</button>
+
+        </form>
+
+        
+
+    </div>
+
+    
+
+
+    {% endblock %}

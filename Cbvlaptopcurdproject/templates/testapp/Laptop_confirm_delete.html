@@ -1,0 +1,24 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>laptopshow</title>
+    {% endblock %}
+
+
+    {% block first %}
+
+    <div class='container' style="width:60%;">
+
+        <form method='post' class='jumbotron'>
+            {% csrf_token %}
+            <p>are you sure you want to delete"{{object}}"?</p>
+        <input type="submit" value="Confirm" class='btn btn-danger'>
+
+            
+
+        </form>  
+
+    </div>
+
+    {% endblock %}

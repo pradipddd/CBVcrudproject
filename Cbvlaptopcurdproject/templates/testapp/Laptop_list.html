@@ -1,0 +1,76 @@
+{% extends 'Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>laptopshow</title>
+    {% endblock %}
+
+
+    {% block first %}
+
+    <div class='container' style="width:60%;">
+        <h2 style="text-align: center;"> Laptop_list </h2>
+
+        <table class='table table-success' >
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Ram</th>
+                <th>Rom</th>
+                <th>Price</th>
+                <th>Processor</th>
+                <th>#</th>
+                <th>#</th>
+
+            </tr>
+            {% for lap in object_list %}
+            <tr>
+                <td>{{lap.name}}</td>
+                <td>{{lap.company}}</td>
+                <td>{{lap.ram}}</td>
+                <td>{{lap.rom}}</td>
+                <td>{{lap.price}}</td>
+                <td>{{lap.processor}}</td>
+                <!-- <td><a href="{% url 'update' lap.id %}"><button >Edit</button></a></td>
+                <td><a href="{% url 'delete' lap.id %}"><button >Edit</button></a></td> -->
+                <td>
+                    <a href="{% url 'update' lap.id %}" class="edit" title="Edit" data-toggle="tooltip" style="margin-left: 5%; color: #fbff00;"><i class="material-icons" style="font-size: 25px; padding: auto; margin-right: 20%;">&#xE254;</i></a>
+                    
+                </td>
+                <td><a href="{% url 'delete' lap.id %}" class="delete" title="Delete" data-toggle="tooltip" style="margin-left: 5%; color: #ff0b0b;"><i class="material-icons" style="font-size: 25px; padding: auto;">&#xE872;</i></a></td>
+        
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    
+
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
